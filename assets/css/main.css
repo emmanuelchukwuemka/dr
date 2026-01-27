@@ -1,0 +1,903 @@
+/* 
+  Dr.Quick Capsules - Main CSS
+  Color Palette:
+  Medical Blue: #2563EB
+  Trust Green: #059669  
+  Urgent Orange: #EA580C (CTA buttons)
+  Deep Gray: #334155 (text)
+  Soft Cream: #FFFBEB (alternating sections)
+  Pure White: #FFFFFF
+*/
+
+:root {
+    --medical-blue: #2563EB;
+    --trust-green: #059669;
+    --urgent-orange: #EA580C;
+    --deep-gray: #334155;
+    --soft-cream: #FFFBEB;
+    --pure-white: #FFFFFF;
+    --text-primary: #1E293B;
+    --text-secondary: #475569;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: var(--deep-gray);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--urgent-orange);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(234, 88, 12, 0.6);
+    background-color: #d14d0a;
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Layout Utilities */
+.bg-cream {
+    background-color: var(--soft-cream);
+}
+
+.bg-white {
+    background-color: var(--pure-white);
+}
+
+.bg-blue {
+    background-color: var(--medical-blue);
+    color: #fff;
+}
+
+/* Section Headlines */
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: var(--medical-blue);
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.1)), url('../images/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-title span {
+    color: var(--medical-blue);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+}
+
+.hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.badge img {
+    width: 30px;
+}
+
+.badge span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid var(--medical-blue);
+    border-bottom: 3px solid var(--medical-blue);
+    transform: rotate(45deg);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    40% {
+        transform: translateY(-10px) rotate(45deg);
+    }
+
+    60% {
+        transform: translateY(-5px) rotate(45deg);
+    }
+}
+
+/* Problem Section */
+.problem-card {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.problem-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.problem-text {
+    flex: 1;
+}
+
+.problem-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Mission Section */
+.mission-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 60px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mission-quote {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #fff;
+    margin: 20px 0;
+}
+
+/* Product & Benefits Section */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-card {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid #f1f5f9;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Timeline */
+.timeline {
+    max-width: 800px;
+    margin: 50px auto 0;
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: var(--medical-blue);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -50px;
+    width: 40px;
+    height: 40px;
+    background: var(--medical-blue);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.timeline-content {
+    background: var(--soft-cream);
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+
+/* Guarantee Section */
+.guarantee-box {
+    background: var(--pure-white);
+    padding: 60px;
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+    border: 3px solid var(--medical-blue);
+    position: relative;
+}
+
+.guarantee-badge img {
+    width: 120px;
+    margin: 0 auto 30px;
+}
+
+.secure-icons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    font-weight: 600;
+    color: var(--trust-green);
+}
+
+/* BlueCare Support */
+.bluecare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.bluecare-card {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.bluecare-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+/* WhatsApp Testimonials */
+.testimonial-phone {
+    max-width: 320px;
+    margin: 0 auto;
+    border: 12px solid #333;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+/* Company Info */
+.location-card {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background: var(--soft-cream);
+    border-radius: 15px;
+}
+
+.loc-icon {
+    font-size: 2rem;
+}
+
+/* Trust Section */
+.trust-badges-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.trust-badge-item {
+    text-align: center;
+    max-width: 150px;
+}
+
+.trust-badge-item img {
+    width: 80px;
+    margin: 0 auto 10px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.stat-card {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--medical-blue);
+    display: block;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* Text Testimonials */
+.text-testimonial-slider .swiper-wrapper,
+.video-slider .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.text-testimonial-slider,
+.video-slider {
+    padding-bottom: 30px !important;
+}
+
+.text-testimonial {
+    background: var(--soft-cream);
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.text-testimonial::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 5rem;
+    color: var(--medical-blue);
+    opacity: 0.1;
+    font-family: serif;
+}
+
+.testimonial-content {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    color: var(--medical-blue);
+    font-weight: 700;
+}
+
+/* Video Testimonials */
+.video-slider {
+    padding: 20px 0 50px;
+}
+
+.video-card {
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: var(--urgent-orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Pricing Plans */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 50px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid #f1f5f9;
+}
+
+.pricing-card.popular {
+    border: 3px solid var(--medical-blue);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--medical-blue);
+    color: #fff;
+    padding: 5px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.pricing-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.pricing-header p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--medical-blue);
+    margin-bottom: 10px;
+}
+
+.savings {
+    background: #DCFCE7;
+    color: var(--trust-green);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    animation: wiggle 2s infinite;
+}
+
+@keyframes wiggle {
+
+    0%,
+    100% {
+        transform: rotate(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: rotate(-2deg);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: rotate(2deg);
+    }
+}
+
+.pricing-features {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.pricing-features li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f8fafc;
+    position: relative;
+    padding-left: 25px;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--trust-green);
+    font-weight: 700;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--medical-blue);
+    color: var(--medical-blue);
+}
+
+.btn-outline:hover {
+    background: var(--medical-blue);
+    color: #fff;
+}
+
+/* Order Form */
+.order-form-container {
+    background: var(--pure-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--medical-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.order-steps {
+    margin-top: 40px;
+}
+
+.order-steps li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.order-steps span {
+    width: 40px;
+    height: 40px;
+    background: var(--medical-blue);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.benefit-icon i,
+.bluecare-icon i,
+.loc-icon i {
+    width: 48px;
+    height: 48px;
+    stroke: var(--medical-blue);
+    stroke-width: 2;
+}
+
+.icon-small {
+    width: 20px;
+    height: 20px;
+    stroke: var(--trust-green);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+}
+
+.whatsapp-float img {
+    width: 35px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 1023px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .problem-card {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .hero-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .mission-quote {
+        font-size: 1.8rem;
+    }
+
+    .mission-content {
+        padding: 30px 20px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+}
+
+/* Trust Cards */
+.trust-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.trust-card {
+    background: var(--pure-white);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    transition: var(--transition);
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.1);
+}
+
+.trust-icon-box {
+    margin-bottom: 20px;
+}
+
+.trust-icon-box i {
+    width: 40px;
+    height: 40px;
+    stroke: var(--medical-blue);
+}
+
+@media (max-width: 768px) {
+    .trust-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
