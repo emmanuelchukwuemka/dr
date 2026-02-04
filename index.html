@@ -174,46 +174,114 @@
                 <p>Listen to real people share their journey with Dr.Quick Capsules.</p>
             </div>
 
-            <div class="swiper video-slider" data-aos="fade-up">
-                <div class="swiper-wrapper">
+            <!-- Video Gallery Grid -->
+            <div class="video-gallery" data-aos="fade-up">
+                <div class="video-grid">
                     <!-- Video 1 -->
-                    <div class="swiper-slide">
-                        <div class="video-card">
-                            <video controls playsinline class="testimonial-video">
-                                <source src="assets/images/video/DR Quick Full Clips Ads Video (7).mp4"
-                                    type="video/mp4">
+                    <div class="video-thumbnail" data-video-index="0">
+                        <div class="video-preview">
+                            <video preload="metadata" class="preview-video">
+                                <source src="assets/images/video/DR Quick Full Clips Ads Video (7).mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Customer Success Story</h4>
+                            <p>Real results from our customers</p>
                         </div>
                     </div>
+
                     <!-- Video 2 -->
-                    <div class="swiper-slide">
-                        <div class="video-card">
-                            <video controls playsinline class="testimonial-video">
+                    <div class="video-thumbnail" data-video-index="1">
+                        <div class="video-preview">
+                            <video preload="metadata" class="preview-video">
                                 <source src="assets/images/video/Dr Quick episode ONE.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Product Overview</h4>
+                            <p>Learn about Dr.Quick benefits</p>
                         </div>
                     </div>
+
                     <!-- Video 3 -->
-                    <div class="swiper-slide">
-                        <div class="video-card">
-                            <video controls playsinline class="testimonial-video">
-                                <source src="assets/images/video/WhatsApp Video 2026-01-29 at 07.28.04.mp4"
-                                    type="video/mp4">
+                    <div class="video-thumbnail" data-video-index="2">
+                        <div class="video-preview">
+                            <video preload="metadata" class="preview-video">
+                                <source src="assets/images/video/WhatsApp Video 2026-01-29 at 07.28.04.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Real Testimonial</h4>
+                            <p>Personal experience shared</p>
                         </div>
                     </div>
+
                     <!-- Video 4 -->
-                    <div class="swiper-slide">
-                        <div class="video-card">
-                            <video controls playsinline class="testimonial-video">
-                                <source src="assets/images/video/WhatsApp Video 2026-01-29 at 21.53.42.mp4"
-                                    type="video/mp4">
+                    <div class="video-thumbnail" data-video-index="3">
+                        <div class="video-preview">
+                            <video preload="metadata" class="preview-video">
+                                <source src="assets/images/video/WhatsApp Video 2026-01-29 at 21.53.42.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                            <div class="play-overlay">
+                                <div class="play-button">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
+                        <div class="video-info">
+                            <h4>Success Journey</h4>
+                            <p>Inspiring transformation story</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Modal -->
+            <div id="video-modal" class="video-modal" style="display: none;">
+                <div class="modal-overlay" id="modal-overlay"></div>
+                <div class="modal-content">
+                    <button class="modal-close" id="modal-close" aria-label="Close video">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                    <div class="modal-video-container">
+                        <video id="modal-video" controls playsinline>
+                            <source src="" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="modal-info">
+                        <h3 id="modal-title">Video Title</h3>
+                        <p id="modal-description">Video description</p>
                     </div>
                 </div>
             </div>
