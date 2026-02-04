@@ -14,13 +14,31 @@ document.getElementById('purchase-form').addEventListener('submit', function (e)
     const formData = new FormData(this);
     const data = Object.fromEntries(formData.entries());
 
-    console.log('Order submitted:', data);
+    // Build WhatsApp message
+    const waNumber = '2348167332278'; // BLUEFIG WhatsApp number (no + or spaces)
+    let message = `New order from website:\n`;
+    message += `Name: ${data.name || ''}\n`;
+    message += `Phone: ${data.phone || ''}\n`;
+    message += `City: ${data.city || ''}\n`;
+    message += `Address: ${data.address || ''}\n`;
+    message += `Package: ${data.package || ''}`;
 
-    // Simulate API call
-    setTimeout(() => {
-        // Redirect to thank you page
-        window.location.href = 'thankyou.html';
-    }, 1500);
+    const encoded = encodeURIComponent(message);
+    const waUrl = `https://wa.me/${waNumber}?text=${encoded}`;
+
+    console.log('Opening WhatsApp URL:', waUrl);
+
+    // Try to open WhatsApp in a new tab; if blocked, open in the same tab as fallback
+    const newWin = window.open(waUrl, '_blank');
+    if (!newWin) {
+        // Popup blocked — navigate current tab to WhatsApp URL
+        window.location.href = waUrl;
+    } else {
+        // Opened in new tab successfully — redirect current page to thank-you
+        setTimeout(() => {
+            window.location.href = 'thankyou.html';
+        }, 1200);
+    }
 });
 
 // Nigerian Phone Validation

@@ -366,6 +366,27 @@ img {
     display: block;
 }
 
+/* Larger type for product support cards */
+.benefit-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+.benefit-card p {
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .benefit-card h3 {
+        font-size: 1.25rem;
+    }
+    .benefit-card p {
+        font-size: 1rem;
+    }
+}
+
 /* Timeline */
 .timeline {
     max-width: 800px;
@@ -408,6 +429,27 @@ img {
     background: var(--soft-cream);
     padding: 20px 30px;
     border-radius: 15px;
+}
+
+/* Larger type for 'How It Works' timeline */
+.timeline-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+.timeline-content p {
+    font-size: 1.05rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .timeline-content h4 {
+        font-size: 1.15rem;
+    }
+    .timeline-content p {
+        font-size: 1rem;
+    }
 }
 
 /* Guarantee Section */
@@ -880,6 +922,18 @@ img {
     justify-content: center;
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
     z-index: 1000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-float svg {
+    width: 35px;
+    height: 35px;
 }
 
 .whatsapp-float img {
@@ -965,4 +1019,34 @@ img {
     .trust-cards-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Policies section styles */
+.policies-grid {
+    gap: 24px;
+}
+.policy-card {
+    background: var(--pure-white);
+    border: 1px solid #eef2f6;
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+.policy-card h3 {
+    margin-bottom: 8px;
+    color: var(--primary-green-dark);
+    font-size: 1.05rem;
+}
+.policy-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+/* Footer tweaks */
+.footer .footer-about h3 {
+    font-size: 1.25rem;
+}
+.footer .footer-links p {
+    margin: 6px 0;
 }
